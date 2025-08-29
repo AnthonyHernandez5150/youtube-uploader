@@ -1,0 +1,71 @@
+# Ignore node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore output files
+output/
+temp/
+logs/
+
+# Ignore authentication files
+auth/client_secret.json
+auth/token.json
+auth/token.pickle
+auth/client_secretold.json
+
+# Files with hardcoded API keys (excluded for security)
+FIXED_AI_APP.py
+fixed_app.py
+batch_script_generator.py
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore Python files (if using Python uploader)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ignore ffmpeg binaries
+ffmpeg
+ffprobe
+
+# Ignore temporary video files
+*.tmp
+*.temp
+
+# Ignore embedded git repositories
+chatterbox/

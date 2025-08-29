@@ -1,0 +1,68 @@
+{
+  "name": "bible-shorts-autouploader",
+  "version": "1.0.0",
+  "description": "Automated Bible verse YouTube Shorts creator and uploader",
+  "main": "gui/main.cjs",
+  "type": "module",
+  "scripts": {
+    "start": "node index.mjs",
+    "dev": "node --watch index.mjs",
+    "single": "node index.mjs --single",
+    "setup": "node setup.mjs",
+    "channel-info": "node setup.mjs info",
+    "gui": "electron gui/main.cjs",
+    "gui-dev": "NODE_ENV=development electron gui/main.cjs",
+    "generate-scripts": "node tools/batchGenerator.mjs",
+    "scripts-status": "node tools/scriptStatus.mjs",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "dist": "npm run build"
+  },
+  "keywords": [
+    "bible",
+    "youtube",
+    "shorts",
+    "automation",
+    "ai",
+    "video-generation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.1",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "form-data": "^4.0.0",
+    "fs-extra": "^11.2.0",
+    "google-auth-library": "^9.6.3",
+    "googleapis": "^133.0.0",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.28.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "electron": "^37.2.4",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.bibleshorts.autouploader",
+    "productName": "Bible Shorts AutoUploader",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist/**/*",
+      "!node_modules/.cache/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "gui/assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

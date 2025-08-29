@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\BibleShortsGUI]
+@="Open Bible Shorts GUI"
+"Icon"="c:\\Users\\mrtig\\Desktop\\Bible Shorts AutoUploader\\START_HERE.bat"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\BibleShortsGUI\command]
+@="\"c:\\Users\\mrtig\\Desktop\\Bible Shorts AutoUploader\\START_HERE.bat\""

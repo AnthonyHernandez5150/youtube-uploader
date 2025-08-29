@@ -1,0 +1,7 @@
+node_modules\
+dist\
+export\
+.git\
+*.log
+*.tmp
+*.cache

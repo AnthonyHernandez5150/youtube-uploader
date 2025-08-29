@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Shorts AutoUploader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 Bible Shorts AutoUploader</h1>
+            <p>Automated AI-powered Bible verse video creator</p>
+        </header>
+
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="generation">🎬 Generation</button>
+            <button class="tab-btn" data-tab="files">🗂️ File Manager</button>
+            <button class="tab-btn" data-tab="stats">📊 Statistics</button>
+        </nav>
+
+        <main>
+            <!-- Generation Tab -->
+            <div id="generation-tab" class="tab-content active">
+                <div class="controls-section">
+                    <h2>🎬 Video Generation</h2>
+                    <div class="button-group">
+                        <button id="generate-single" class="primary-btn">
+                            <span class="btn-icon">🎯</span>
+                            Generate 1 Video
+                        </button>
+                        <button id="generate-two" class="primary-btn">
+                            <span class="btn-icon">🎬</span>
+                            Generate 2 Videos
+                        </button>
+                    </div>
+                </div>
+
+                <div class="test-section">
+                    <h2>🔧 Test & Status</h2>
+                    <div class="button-group">
+                        <button id="test-voice" class="secondary-btn">
+                            <span class="btn-icon">🎤</span>
+                            Test Voice
+                        </button>
+                        <button id="check-youtube" class="secondary-btn">
+                            <span class="btn-icon">📺</span>
+                            Check YouTube
+                        </button>
+                        <button id="refresh-logs" class="secondary-btn">
+                            <span class="btn-icon">🔄</span>
+                            Refresh Logs
+                        </button>
+                    </div>
+                </div>
+
+                <div class="scripts-section">
+                    <h2>📝 Script Management</h2>
+                    <div class="script-stats">
+                        <div class="stat-card">
+                            <h3>📊 Script Inventory</h3>
+                            <div id="script-inventory">Loading...</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>🎯 Ready to Use</h3>
+                            <div id="unused-scripts">Loading...</div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button id="generate-scripts" class="primary-btn">
+                            <span class="btn-icon">🔥</span>
+                            Generate 20 Scripts
+                        </button>
+                        <button id="script-status" class="secondary-btn">
+                            <span class="btn-icon">📊</span>
+                            Check Status
+                        </button>
+                        <button id="reset-scripts" class="warning-btn">
+                            <span class="btn-icon">🔄</span>
+                            Reset All
+                        </button>
+                    </div>
+                </div>
+
+                <div class="status-section">
+                    <h2>📊 Status & Logs</h2>
+                    <div class="status-display">
+                        <div id="status-message" class="status-idle">Ready to generate videos</div>
+                        <div class="progress-container">
+                            <div id="progress-bar" class="progress-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="logs-container">
+                        <h3>Real-time Output:</h3>
+                        <div id="live-output" class="log-display"></div>
+                        
+                        <h3>Latest Logs:</h3>
+                        <div id="log-display" class="log-display"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Manager Tab -->
+            <div id="files-tab" class="tab-content">
+                <div class="file-manager-section">
+                    <h2>🗂️ File Management</h2>
+                    
+                    <div class="storage-stats">
+                        <div class="stat-card">
+                            <h3>📊 Storage Overview</h3>
+                            <div id="storage-info">Loading...</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>🎬 Final Videos</h3>
+                            <div id="video-count">Loading...</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>🎤 Audio Files</h3>
+                            <div id="audio-count">Loading...</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>📹 Stock Videos</h3>
+                            <div id="stock-count">Loading...</div>
+                        </div>
+                    </div>
+
+                    <div class="file-actions">
+                        <h3>🛠️ Quick Actions</h3>
+                        <div class="button-group">
+                            <button id="organize-files" class="secondary-btn">
+                                <span class="btn-icon">📁</span>
+                                Organize by Date
+                            </button>
+                            <button id="clean-old-files" class="warning-btn">
+                                <span class="btn-icon">🧹</span>
+                                Clean Old Files
+                            </button>
+                            <button id="archive-week" class="secondary-btn">
+                                <span class="btn-icon">📦</span>
+                                Archive This Week
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="file-browser">
+                        <h3>📁 File Browser</h3>
+                        <div class="file-type-tabs">
+                            <button class="file-tab-btn active" data-type="videos">Final Videos</button>
+                            <button class="file-tab-btn" data-type="audio">Audio Files</button>
+                            <button class="file-tab-btn" data-type="stock">Stock Videos</button>
+                            <button class="file-tab-btn" data-type="scripts">Scripts</button>
+                        </div>
+                        <div id="file-list" class="file-list">
+                            Select a file type to browse...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Tab -->
+            <div id="stats-tab" class="tab-content">
+                <div class="stats-section">
+                    <h2>📊 Usage Statistics</h2>
+                    
+                    <div class="daily-stats">
+                        <h3>📅 Today's Usage</h3>
+                        <div id="daily-usage" class="usage-display">Loading...</div>
+                    </div>
+
+                    <div class="api-stats">
+                        <h3>🔗 API Usage</h3>
+                        <div id="api-usage" class="usage-display">Loading...</div>
+                    </div>
+
+                    <div class="generation-history">
+                        <h3>📈 Generation History</h3>
+                        <div id="generation-history" class="history-display">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <span>🤖 Powered by OpenRouter AI • 🎤 Chatterbox TTS • 📹 FFmpeg</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
